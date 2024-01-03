@@ -1,1 +1,6 @@
-rasp_pi_env1/
+/rasp_pi_env1/*
+
+/build/*
+
+
+/dist/test_recv_4/_internal/*
