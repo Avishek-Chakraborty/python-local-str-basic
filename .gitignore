@@ -2,10 +2,5 @@
 
 /build/*
 
-<<<<<<< HEAD
 
 /dist/test_recv_4/_internal/*
-=======
-/dist/*
-!dist/test_recv_4/test_recv_4.exe
->>>>>>> 4ee6b98077834a6e987108c1b357835ee6ea3ed1
