@@ -1,0 +1,54 @@
+1. Basic Conversion:
+    ffmpeg -i input.mp4 output.avi
+
+2. Remux an MKV file into MP4:
+    ffmpeg -i input.mkv -c:v copy -c:a copy output.mp4
+
+3. High-Quality Encoding:
+    ffmpeg -i input.mp4 -preset slower -crf 18 output.mp4
+
+4. Trimming Without Re-Encoding:
+    ffmpeg -ss [start] -i input.mp4 -t [duration] -c copy output.mp4
+
+5. Mux Video and Audio from Another Video:
+    ffmpeg -i video1.mp4 -i audio.mp4 -c copy -map 0:0 -map 1:1 -shortest output.mp4
+
+6. Concat Demuxer:
+    ffmpeg -f concat -i list.txt -c copy output.mp4
+
+7. Delay Audio/Video:
+    ffmpeg -i input.mp4 -itsoffset 3.84 -i input.mp4 -map 1:v -map 0:a -vcodec copy -acodec copy output.mp4
+
+8. Burn Subtitles:
+    ffmpeg -i input.mp4 -vf ass=sub.ass output.mp4
+
+9. Extract Frames from a Video:
+    ffmpeg -ss [start] -i input.mp4 -t [duration] -c copy output.mp4
+
+10. Get Video File Information:
+    ffmpeg -i video.flv -hide_banner
+    
+
+11. Split a Video into Images:
+    ffmpeg -i video.flv image%d.jpg
+    
+
+12. Convert Images into a Video:
+    ffmpeg -i image%d.jpg video.mp4
+    
+
+13. Add Subtitles to a Video:
+    ffmpeg -i video.mp4 -i subtitles.srt -map 0 -map 1 -c copy -c:v libx264 -crf 23 -preset veryfast video-output.mkv
+    
+
+14. Convert a Video File from mp4 to webm Using Specific Codecs²:
+    ffmpeg -i input.mp4 -c:v libvpx -c:a libvorbis output.webm
+    
+
+15. Convert an Audio File from mp3 to ogg Encoded with the libopus Codec²:
+    ffmpeg -i input.mp3 -c:a libopus output.ogg
+    
+
+FFmpeg cheat sheet : GitHub. https://gist.github.com/steven2358/ba153c642fe2bb1e47485962df07c730
+FFMPEG Cheat Sheet : https://mpolinowski.github.io/docs/DevOps/Linux/2022-03-07--ffmpeg-cheat-sheet/2022-03-07/
+15 Useful 'FFmpeg' Commands for Video, Audio and Image -  https://www.tecmint.com/ffmpeg-commands-for-video-audio-and-image-conversion-in-linux/
