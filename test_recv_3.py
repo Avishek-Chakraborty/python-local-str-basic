@@ -1,7 +1,7 @@
 import cv2
 
 # UDP URL for the Raspberry Pi stream
-udp_url = 'udp://192.168.29.232:5001'
+udp_url = "udp://192.168.29.232:5001"
 
 # Create a VideoCapture object
 cap = cv2.VideoCapture(udp_url)
@@ -20,10 +20,10 @@ while True:
     frame = cv2.resize(frame, output_size)
 
     # Display the frame
-    cv2.imshow('Raspberry Pi Stream', frame)
+    cv2.imshow("Raspberry Pi Stream", frame)
 
     # Press 'q' to exit the loop and close the window
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 
 # Release the VideoCapture and close all OpenCV windows
